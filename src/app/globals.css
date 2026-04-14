@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  
+  --color-primaria: #22C55E; /*Ações importantes*/
+  --color-primaria-clara: #86EFAC; /*Hover leve*/
+  --color-primaria-escura: #15803D; /*Hover pesado*/
+
+  --color-secundaria: #020617;/*Base forte / títulos / textos importantes 
+  / icones principais*/
+
+  --color-destaque: #FACC15; /*Alertas / detalhes*/
+
+  --color-fundo: #F8FAFC; /*Fundo da página*/
+  --color-superficie: #FFFFFF; /*Superfícies / cards / containers*/
+
+  --color-texto: #0F172A; /*Textos principais*/
+  --color-texto-suave: #64748B; /*Textos secundários / datas/ descrições / labels*/
+
+  --color-borda: #E2E8F0; /*bordas*/
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components{
+  .titulo-1{
+    @apply text-[32px] font-bold;
+    color: var(--color-secundaria);
   }
+  .titulo-2{
+    @apply text-[24px] font-semibold;
+    color: var(--color-secundaria);
+  }
+  .titulo-3{
+    @apply text-[20px] font-semibold;
+    color: var(--color-secundaria);
+  }
+  .texto{
+    @apply text-[16px] font-normal;
+    color: var(--color-texto);
+  }
+  .texto-suave{
+    @apply text-[14px] font-normal;
+    color: var(--color-texto-suave);
+  }
+  
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+body{
+  background: var(--color-fundo);
 }
