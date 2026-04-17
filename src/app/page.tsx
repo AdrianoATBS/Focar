@@ -1,9 +1,10 @@
-import Image from "next/image";
+import HeaderBase from "@/shared/components/HeaderBase";
+
 
 export default function Home() {
   return (
-    <div >
-     
-    </div>
+    <main className="max-w-7xl mx-auto w-full">  
+      <HeaderBase />
+    </main>
   );
 }

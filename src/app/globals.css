@@ -46,4 +46,5 @@
 
 body{
   background: var(--color-fundo);
+  font-family: var(--font-manrope), sans-serif;
 }
