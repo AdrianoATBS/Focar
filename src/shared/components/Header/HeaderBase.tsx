@@ -11,7 +11,8 @@ type HeaderBaseProps = {
 
 export default function HeaderBase( { left, center, right }: HeaderBaseProps ) {
     return(
-        <header className="max-w-5xl mx-auto w-full flex items-center justify-between gap-6 pl-4 border-b-2 border-gray-200 py-4
+        <header className=" w-full flex items-center justify-between gap-6 pl-4 border-b-2
+         border-borda/25 py-4
             r">
 
             <div className="flex items-center gap-6">
