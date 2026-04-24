@@ -6,7 +6,7 @@ import { CiCalendar } from "react-icons/ci";
 export default function Sidebar(){
     return(
         <section className="p-5 max-w-40 h-full border-r border-borda/25">
-                <div className="flex items-center ">
+                <div className="flex items-center mb-6">
 
                     <div className="bg-gradient-to-br from-primaria-escura to-primaria-clara  
                      w-8 h-8 rounded-xl flex items-center justify-center" >
@@ -14,7 +14,8 @@ export default function Sidebar(){
                     </div>
                     <h3 className="titulo-3 pl-2">Focar</h3>
                 </div>
-                <div className="flex flex-col gap-2 pt-4 pl-1">
+
+                <div className="flex flex-col gap-4 pt-4 border-t border-borda/25">
                     <div className="flex gap-2 hover:text-primaria-escura cursor-pointer">
                         <MdWindow className=""/>
                         <h3 className="text-sm font-bold">Tarefas</h3>

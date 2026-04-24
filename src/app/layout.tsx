@@ -1,7 +1,7 @@
 import { Manrope } from "next/font/google";
 
 import "./globals.css";
-
+import Sidebar from "@/shared/components/Sidebar";
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
@@ -18,7 +18,13 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="h-screen flex flex-col">
+        <main>
+        {children}
+        </main>  
+
+      </body>
+
     </html>
   );
 }
