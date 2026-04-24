@@ -10,7 +10,8 @@ export default function Sidebar(){
 
                     <div className="bg-gradient-to-br from-primaria-escura to-primaria-clara  
                      w-8 h-8 rounded-xl flex items-center justify-center" >
-                        <Image src="/Icon/janela.png" alt="Janela" width={18} height={20} />
+                        <Image src="/Icon/janela.png" alt="Janela" width={18} height={18}  
+                        className="w-4 h-4"/>
                     </div>
                     <h3 className="titulo-3 pl-2">Focar</h3>
                 </div>
