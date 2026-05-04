@@ -4,7 +4,12 @@ import Nav from "@/shared/components/Header/Nav";
 import Icons from "@/shared/components/Header/Icons";
 import TarefaContainer from "@/features/tarefas/components/TarefaContainer";
 import Sidebar from "@/shared/components/Sidebar";
-export default function Home() {
+import { getTodos } from "@/features/tarefas/services/getTodos";
+
+
+export default async function Home() {
+  const tarefas = await getTodos();
+
   return (
     <main className="w-full flex flex-col h-full">  
         
@@ -18,7 +23,7 @@ export default function Home() {
           />
           <div className="flex flex-1 ">
             <Sidebar/>
-            <TarefaContainer/>
+            <TarefaContainer todos={tarefas.todos}/>
           </div>
 
        
