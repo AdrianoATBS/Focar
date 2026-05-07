@@ -2,7 +2,7 @@ import CardTarefa from "./CardTarefa";
 import { Todo } from "../types/todos.model";
 interface ListaDeTarefaProps {
     todos: Todo[];
-    toggleTarefa: (id: number) => void;  
+    toggleTarefa: (id: number) => void;
 }
 export default function ListaDeTarefa({ todos, toggleTarefa }: ListaDeTarefaProps) {
     

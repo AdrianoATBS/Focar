@@ -12,7 +12,13 @@ interface ListaDeTarefaProps {
 }
 export default  function TarefaContainer({todos}: ListaDeTarefaProps) {
     const [lista, setLista] = useState<Todo[]>(todos);
+    const [filtro, setFiltro] = useState("todas");
 
+    const todosFiltrados = filtro === "todas" ?
+    lista : filtro === "pendentes" ?
+    lista.filter((tarefa) => !tarefa.completed) :
+    lista.filter((tarefa) => tarefa.completed);
+    
     const toggleTarefa = (id: number) => {
         const novaLista = lista.map((tarefa) => {
             return tarefa.id === id ? {...tarefa, completed: !tarefa.completed} : tarefa
@@ -20,19 +26,16 @@ export default  function TarefaContainer({todos}: ListaDeTarefaProps) {
         setLista(novaLista);
     };
 
-    const pendentes = lista.filter((tarefa) => !tarefa.completed);
-    const completadas = lista.filter((tarefa) => tarefa.completed);
-
+    
     return(
         <div className="max-w-3xl mx-auto w-full p-6">
             <TituloGenericoTarefa frasesMotivacionais={frasesMotivacionais}/>
             <TarefaInput/>
-            <TarefaFiltro />
-          
-            <ListaDeTarefa todos={pendentes} toggleTarefa={toggleTarefa}/>
 
-            <h2 className="text-[0.875rem] text-texto-suave mt-5 mb-5">{completadas.length} Tarefas Completadas</h2>
-            <ListaDeTarefa todos={completadas} toggleTarefa={toggleTarefa}/>
+
+            <TarefaFiltro  filtro={filtro} setFiltro={setFiltro}/>
+            <ListaDeTarefa todos={todosFiltrados} toggleTarefa={toggleTarefa}/>
+           
         </div>
     )
 }
