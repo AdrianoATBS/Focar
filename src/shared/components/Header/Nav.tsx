@@ -9,7 +9,7 @@ export default function Nav() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/focus" className="texto hover:text-primaria-clara hover:border-b-2 border-primaria-clara ">
+                    <Link href="/foco" className="texto hover:text-primaria-clara hover:border-b-2 border-primaria-clara ">
                         Focus
                     </Link>
                 </li>
