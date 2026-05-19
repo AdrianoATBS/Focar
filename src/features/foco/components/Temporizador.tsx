@@ -19,7 +19,13 @@ export default function Temporizador( ) {
         useEffect(() => {
            if(rodando){
             const intervalo = setInterval(() => {
-                setTempo((prevTempo) => prevTempo + 1);
+                setTempo((prevTempo) => {
+                    if (prevTempo <= 0) {
+                        setRodando(false);
+                        return 0;
+                    }
+                    return prevTempo - 1;
+                });
             }, 1000);
 
             return () => clearInterval(intervalo);
@@ -28,13 +34,13 @@ export default function Temporizador( ) {
 
         
         const adicionarTempo = () => {
-            setTempo((prevTempo) => prevTempo + 280);
+            setTempo((prevTempo) => prevTempo + 300);
         };
         const resetarTempo = () => {
             setTempo(0);
         }
         const diminuirTempo = () => {
-            setTempo((prevTempo) => Math.max(prevTempo - 280, 0));
+            setTempo((prevTempo) => Math.max(prevTempo - 300, 0));
         }
 
 
