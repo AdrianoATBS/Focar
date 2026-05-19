@@ -12,7 +12,7 @@ export default function TemporizadorControles({ rodando, setRodando }: Temporiza
       
 
     return(
-        <section className="flex items-center justify-center gap-10 mb-10">
+        <section className="w-full max-w-4xl flex items-center justify-center gap-10 mb-10">
                 <div className="flex justify-center items-center " >
 
                 <button className="cursor-pointer bg-gradient-to-br

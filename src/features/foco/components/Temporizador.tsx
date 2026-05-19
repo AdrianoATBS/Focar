@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 export default function Temporizador( ) {
 
-    const [tempo, setTempo] = useState(0);
+    const [tempo, setTempo] = useState(1500);
 
     const [rodando, setRodando] = useState<boolean>(false);
 
@@ -37,7 +37,7 @@ export default function Temporizador( ) {
             setTempo((prevTempo) => prevTempo + 300);
         };
         const resetarTempo = () => {
-            setTempo(0);
+            setTempo(1500);
         }
         const diminuirTempo = () => {
             setTempo((prevTempo) => Math.max(prevTempo - 300, 0));
@@ -45,8 +45,8 @@ export default function Temporizador( ) {
 
 
     return(
-        <div className=" flex flex-col items-center justify-center gap-3
-        max-w-7xl mx-auto mt-5">
+        <div className="min-h-screen w-full flex flex-col items-center justify-center gap-3
+        mx-auto">
             <ExibirTemporizador 
                 tempo={tempo}
                 formatarTempo={formatarTempo}
