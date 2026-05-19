@@ -1,7 +1,33 @@
-export default function TemporizadorControles() {
-    return(
-        <div>
+"use client"
+import { SetStateAction } from "react";
+import { FaPlay } from "react-icons/fa";
+import { FaPause } from "react-icons/fa";
+import { Dispatch } from "react";
 
-        </div>
+interface TemporizadorControlesProps {
+    rodando: boolean;
+    setRodando: Dispatch<SetStateAction<boolean>>;
+}
+export default function TemporizadorControles({ rodando, setRodando }: TemporizadorControlesProps) {
+      
+
+    return(
+        <section className="flex items-center justify-center gap-10 mb-10">
+                <div className="flex justify-center items-center " >
+
+                <button className="cursor-pointer bg-gradient-to-br
+                    from-primaria-escura to-primaria-clara text-white p-4 rounded-full
+                    brightness-80 hover:brightness-100
+                    hover:from-primaria-clara
+                    hover:to-primaria-escura transition-colors duration-300 active:scale-95"
+                    onClick={() => {
+                        setRodando((prevRodando) => !prevRodando);
+                    }}>
+                        {rodando ? <FaPause /> : <FaPlay />}
+                    </button>
+                    
+                </div>
+        </section>
     )
 }
+                  

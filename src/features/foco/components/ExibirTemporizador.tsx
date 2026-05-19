@@ -3,35 +3,16 @@ import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import { IoIosRefresh } from "react-icons/io";
 
-import { useState, useEffect } from "react";
-export default function ExibirTemporizador() {
-    const [tempo, setTempo] = useState(0);
+interface ExibirTemporizadorProps {
+    tempo: number;
+    formatarTempo: (tempo: number) => string;
+    adicionarTempo: () => void;
+    resetarTempo: () => void;
+    diminuirTempo: () => void;
+}
 
-    const formatarTempo = (tempo: number) => {
-        const minutos = Math.floor(tempo / 60);
-        const segundos = tempo % 60;
-        return `${minutos.toString().padStart(2, "0")}: ${segundos.toString().padStart(2, "0")}`;
-    };
-
-
-    useEffect(() => {
-     
-        const timer = setInterval(() => {
-            setTempo((prevTempo) => prevTempo + 1);
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, []);
-
-    const adicionarTempo = () => {
-        setTempo((prevTempo) => prevTempo + 280);
-    };
-    const resetarTempo = () => {
-        setTempo(0);
-    }
-    const diminuirTempo = () => {
-        setTempo((prevTempo) => Math.max(prevTempo - 280, 0));
-    }
+export default function ExibirTemporizador({ tempo, formatarTempo, 
+    adicionarTempo, resetarTempo, diminuirTempo }: ExibirTemporizadorProps) {
     
 
     return(
@@ -66,7 +47,9 @@ export default function ExibirTemporizador() {
                          <CiCircleMinus />
                     </button>
                 </div>
+
             </div>
+            
         </section>
     )
 }
