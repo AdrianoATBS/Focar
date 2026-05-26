@@ -13,7 +13,7 @@ interface ExibirTemporizadorProps {
 }
 
 export default function ExibirTemporizador({ tempo, formatarTempo, 
-    adicionarTempo, resetarTempo, diminuirTempo }: ExibirTemporizadorProps) {
+    adicionarTempo, resetarTempo, diminuirTempo }: ExibirTemporizadorProps,  ){
     
 
     return(
@@ -21,7 +21,7 @@ export default function ExibirTemporizador({ tempo, formatarTempo,
             rounded-full 
             w-72 h-72 relative">
 
-
+            
             <div className="flex flex-col items-center justify-center absolute">
                 <span className="text-6xl font-bold">{formatarTempo(tempo)}</span>
                 <div className=" border-t-4 border-primaria-clara w-8 rounded-2xl m-1"></div>

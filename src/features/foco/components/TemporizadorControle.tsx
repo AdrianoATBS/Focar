@@ -12,10 +12,10 @@ export default function TemporizadorControles({ rodando, setRodando }: Temporiza
       
 
     return(
-        <section className="w-full max-w-4xl flex items-center justify-center gap-10 mb-10">
+        <section className="w-full flex items-center justify-center gap-10 mb-10 mt-5">
                 <div className="flex justify-center items-center " >
 
-                <button className="cursor-pointer bg-gradient-to-br
+                <button className="cursor-pointer bg-linear-to-br
                     from-primaria-escura to-primaria-clara text-white p-4 rounded-full
                     brightness-80 hover:brightness-100
                     hover:from-primaria-clara

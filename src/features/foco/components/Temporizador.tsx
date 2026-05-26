@@ -1,6 +1,9 @@
 "use client";
+import CardsDados from "./CardsDados";
 import ExibirTemporizador from "./ExibirTemporizador";
 import TemporizadorControles from "./TemporizadorControle";
+import  FrasesMotivacionaisFocus  from "./FrasesMotivacionaisFocus";
+import { frasesMotivacionaisFocus } from "../mocks/frasesMotivacionaisFocus";
 import { useState, useEffect } from "react";
 
 
@@ -45,19 +48,24 @@ export default function Temporizador( ) {
 
 
     return(
-        <div className="min-h-screen w-full flex flex-col items-center justify-center gap-3
+        <div className=" w-full flex flex-col items-center justify-center gap-3
         mx-auto">
+           
+            <FrasesMotivacionaisFocus frases={frasesMotivacionaisFocus} />
+           
             <ExibirTemporizador 
                 tempo={tempo}
                 formatarTempo={formatarTempo}
                 adicionarTempo={adicionarTempo}
                 resetarTempo={resetarTempo}
                 diminuirTempo={diminuirTempo}
+               
             />
             <TemporizadorControles 
                 rodando={rodando}
                 setRodando={setRodando}
             />
+            <CardsDados />
         </div>
     )
 }
