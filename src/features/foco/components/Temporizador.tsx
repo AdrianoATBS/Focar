@@ -4,6 +4,7 @@ import ExibirTemporizador from "./ExibirTemporizador";
 import TemporizadorControles from "./TemporizadorControle";
 import  FrasesMotivacionaisFocus  from "./FrasesMotivacionaisFocus";
 import { frasesMotivacionaisFocus } from "../mocks/frasesMotivacionaisFocus";
+import MensagemTrabalhando from "./MensagemTrabalhando";
 import { useState, useEffect } from "react";
 
 
@@ -50,7 +51,7 @@ export default function Temporizador( ) {
     return(
         <div className=" w-full flex flex-col items-center justify-center gap-3
         mx-auto">
-           
+            <MensagemTrabalhando rodando={rodando} />
             <FrasesMotivacionaisFocus frases={frasesMotivacionaisFocus} />
            
             <ExibirTemporizador 
