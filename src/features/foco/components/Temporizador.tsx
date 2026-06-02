@@ -5,7 +5,8 @@ import TemporizadorControles from "./TemporizadorControle";
 import  FrasesMotivacionaisFocus  from "./FrasesMotivacionaisFocus";
 import { frasesMotivacionaisFocus } from "../mocks/frasesMotivacionaisFocus";
 import MensagemTrabalhando from "./MensagemTrabalhando";
-import { useState, useEffect } from "react";
+import ControleDeSom from "./ControleDeSom";
+import { useState, useEffect, useRef } from "react";
 
 
 export default function Temporizador( ) {
@@ -13,6 +14,9 @@ export default function Temporizador( ) {
     const [tempo, setTempo] = useState(1500);
 
     const [rodando, setRodando] = useState<boolean>(false);
+    const [somAtual, setSomAtual] = useState("");
+    const [volume, setVolume] = useState(0.5);
+    const [mostrarVolume, setMostrarVolume] = useState(false);
 
     const formatarTempo = (tempo: number) => {
         const minutos = Math.floor(tempo / 60);
@@ -46,10 +50,61 @@ export default function Temporizador( ) {
         const diminuirTempo = () => {
             setTempo((prevTempo) => Math.max(prevTempo - 300, 0));
         }
+        const audioRef = useRef<HTMLAudioElement | null>(null);
+        
+        useEffect(() => {
+            if(audioRef.current){
+                audioRef.current.pause();
+                audioRef.current = null;
+            }
+            if(!somAtual){
+                return;
+            }
+            if(somAtual !== 'none')
+            {
+                audioRef.current = new Audio(`/audio/${somAtual}.mp3`);
+                audioRef.current.loop = true;
+                audioRef.current.play();
+            }
+            return () => {
+                if(audioRef.current){
+                    audioRef.current.pause();
+                    audioRef.current = null;
+                };
+            };
+        }, [somAtual]);
+
+        const setSomAtivo = (som: string) => {
+            if(somAtual === "lofi" && som === "lofi"){
+                setSomAtual("");
+            }
+            else if(somAtual === "rain" && som === "rain"){
+                setSomAtual("");
+            }
+            else if(somAtual === "forest" && som === "forest"){
+                setSomAtual("");
+            }
+            else{
+                setSomAtual(som);
+            }
+        };
+
+        const ajustarVolume = (novoVolume: number) => {
+            setVolume(novoVolume);
+        };
+
+         useEffect(() => {
+            if(audioRef.current){
+                audioRef.current.volume = volume;
+            }
+         }, [volume]);
+        
+      
+
 
 
     return(
-        <div className=" w-full flex flex-col items-center justify-center gap-3
+        <section className=" w-full flex flex-col items-center justify-center gap-3
         mx-auto">
             <MensagemTrabalhando rodando={rodando} />
             <FrasesMotivacionaisFocus frases={frasesMotivacionaisFocus} />
@@ -66,7 +121,15 @@ export default function Temporizador( ) {
                 rodando={rodando}
                 setRodando={setRodando}
             />
-            <CardsDados />
-        </div>
+            <div className="w-full flex items-center justify-center gap-10 relative">
+                <CardsDados />
+                <div className="absolute top-25 right-38">
+
+                <ControleDeSom somAtivo={somAtual} setSomAtivo={setSomAtivo} volume={volume} 
+                ajustarVolume={ajustarVolume} mostrarVolume={mostrarVolume}
+                 setMostrarVolume={setMostrarVolume} />
+                </div>
+            </div>
+        </section>
     )
 }
