@@ -9,8 +9,8 @@ export default function FrasesMotivacionaisFocus({ frases }: FrasesMotivacionais
     const fraseMotivacional = frases[indiceDoDia].texto;
 
     return(
-        <section className="w-full max-w-3xl flex items-center justify-center p-2 ">
+        <div className="w-full max-w-3xl flex items-center justify-center p-2 ">
             <h1 className="titulo-1 text-center">{fraseMotivacional}</h1>
-        </section>
+        </div>
     )
 }

@@ -17,7 +17,7 @@ export default function ExibirTemporizador({ tempo, formatarTempo,
     
 
     return(
-        <section className="flex flex-col items-center justify-center border-8 border-primaria-escura
+        <div className="flex flex-col items-center justify-center border-8 border-primaria-escura
             rounded-full 
             w-72 h-72 relative">
 
@@ -58,6 +58,6 @@ export default function ExibirTemporizador({ tempo, formatarTempo,
             </div>
             
             
-        </section>
+        </div>
     )
 }
