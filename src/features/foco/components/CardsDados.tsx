@@ -4,7 +4,7 @@ import { SlBadge } from "react-icons/sl";
 import  Link  from "next/link";
 export default function CardsDados() {
     return(
-        <section className="w-full max-w-3xl flex items-center justify-between gap-5
+        <section className="w-full max-w-4xl flex items-center justify-between gap-5
         mx-auto mb-10">
            
                 <div className="w-full h-36 flex flex-col items-start justify-center gap-2
