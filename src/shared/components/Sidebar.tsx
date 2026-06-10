@@ -5,10 +5,10 @@ import { CiCalendar } from "react-icons/ci";
 
 export default function Sidebar(){
     return(
-        <section className="p-5 max-w-40 h-full border-r border-borda/25">
+        <section className="p-5 max-w-40 h-full border-r border-borda/25 flex flex-col ">
                 <div className="flex items-center mb-6">
 
-                    <div className="bg-gradient-to-br from-primaria-escura to-primaria-clara  
+                    <div className="bg-linear-to-br from-primaria-escura to-primaria-clara  
                      w-8 h-8 rounded-xl flex items-center justify-center" >
                         <Image src="/Icon/janela.png" alt="Janela" width={18} height={18}  
                         className="w-4 h-4"/>
