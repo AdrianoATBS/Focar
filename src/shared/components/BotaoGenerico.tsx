@@ -1,6 +1,7 @@
+"use client";
 interface BotaoGenericoProps {
-    texto: string;
-    onClick: () => void;
+    texto: React.ReactNode;
+    onClick?: () => void;
     className?: string;
 }
 
