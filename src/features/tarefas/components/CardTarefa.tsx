@@ -3,9 +3,10 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 interface CardTarefaProps {
     todos: Todo;
     onToggle: (id: number) => void;
+    deletarTarefa: (id: number) => Promise<void>;
 }
 
-export default function CardTarefa({ todos, onToggle }: CardTarefaProps) {
+export default function CardTarefa({ todos, onToggle, deletarTarefa }: CardTarefaProps) {
     return(
         <section className="bg-white p-4 rounded-lg shadow mt-4 mb-2 flex items-center justify-between gap-4">
             <div className="flex items-center justify-end  gap-3">
@@ -28,7 +29,8 @@ export default function CardTarefa({ todos, onToggle }: CardTarefaProps) {
 
             </div>
            {todos.completed && (
-                <RiDeleteBin6Line className="text-[#94A3B8] cursor-pointer " size={18} />
+                <RiDeleteBin6Line className="text-[#94A3B8] cursor-pointer " size={18} 
+                onClick={() => deletarTarefa(todos.id)} />
            )}
         </section>
     )
