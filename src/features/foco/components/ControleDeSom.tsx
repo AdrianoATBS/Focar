@@ -13,7 +13,7 @@ interface ControleDeSomProps {
 export default function ControleDeSom({ somAtivo, setSomAtivo, volume, ajustarVolume, mostrarVolume, setMostrarVolume }: ControleDeSomProps) {
     return(
         <div className="w-fit flex items-center justify-end 
-        p-4 shadow-2xl bg-superficie rounded-full mb-10 ">
+        p-4 shadow-2xl bg-superficie rounded-full mb-10 mt-8 ">
             {somAtivo && volume === 0 ? (
                 <FaVolumeXmark className="text-2xl cursor-pointer text-[#5E6479] " 
                 onClick={() => setMostrarVolume(!mostrarVolume)}

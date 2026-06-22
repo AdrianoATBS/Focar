@@ -123,7 +123,7 @@ export default function Temporizador( ) {
             />
             <div className="w-full flex items-center justify-center gap-10 relative">
                 <CardsDados />
-                <div className="absolute top-25 right-38">
+                <div className="absolute top-25 right-15">
 
                 <ControleDeSom somAtivo={somAtual} setSomAtivo={setSomAtivo} volume={volume} 
                 ajustarVolume={ajustarVolume} mostrarVolume={mostrarVolume}
