@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Focar
 
-## Getting Started
+## Sobre o Projeto
 
-First, run the development server:
+O **Focar** é uma aplicação web desenvolvida com **Next.js**, criada para auxiliar usuários na organização de tarefas, gerenciamento de foco e acompanhamento de datas por meio de um calendário.
+
+O projeto foi desenvolvido com o objetivo de praticar conceitos modernos de desenvolvimento Frontend, incluindo:
+
+* Consumo de APIs REST
+* Gerenciamento de estado com React
+* Componentização
+* Organização de projetos por funcionalidades (Feature-Based Architecture)
+* Tipagem com TypeScript
+* Estilização com Tailwind CSS
+
+Os dados das tarefas são consumidos através da API pública **DummyJSON**.
+
+---
+
+## Funcionalidades
+
+### Tarefas
+
+* Adicionar novas tarefas
+* Listar tarefas
+* Filtrar tarefas:
+
+  * Todas
+  * Pendentes
+  * Concluídas
+* Marcar tarefas como concluídas
+* Remover tarefas concluídas
+
+---
+
+### Focus
+
+* Temporizador de foco
+* Iniciar e pausar sessão
+* Reiniciar cronômetro
+* Aumentar tempo
+* Diminuir tempo
+* Mensagens motivacionais
+* Sons ambientes:
+
+  * Lo-fi
+  * Rain
+  * Forest
+* Controle de volume
+
+---
+
+### Calendário
+
+* Navegação entre meses
+* Destaque para o dia atual
+* Visualização mensal do calendário
+
+---
+
+## Tecnologias Utilizadas
+
+### Principais
+
+* Next.js (App Router)
+* React
+* TypeScript
+* Tailwind CSS
+
+### Bibliotecas
+
+* React Icons
+
+---
+
+## Estrutura do Projeto
+
+```text
+src
+│
+├── app
+│   ├── calendario
+│   ├── foco
+│   └── tarefas
+│
+├── features
+│   ├── calendario
+│   ├── foco
+│   └── tarefas
+│
+├── lib
+│
+└── shared
+```
+
+### Organização
+
+O projeto segue uma arquitetura baseada em funcionalidades (**Feature-Based Architecture**), onde cada módulo possui seus próprios componentes, mocks, serviços e tipos.
+
+---
+
+## API Utilizada
+
+DummyJSON
+
+Documentação:
+
+https://dummyjson.com/docs/todos/
+
+Endpoints utilizados:
+
+```http
+GET /todos
+POST /todos/add
+DELETE /todos/{id}
+```
+
+---
+
+## Como Executar o Projeto
+
+### Clonar o repositório
+
+```bash
+git clone URL_DO_REPOSITORIO
+```
+
+### Instalar dependências
+
+```bash
+npm install
+```
+
+### Executar em ambiente de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto estará disponível em:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Objetivos do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto foi desenvolvido com foco em aprendizado e prática dos seguintes conceitos:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* React Hooks
+* Next.js App Router
+* Componentização
+* Consumo de APIs REST
+* TypeScript
+* Gerenciamento de estado
+* Organização de projetos escaláveis
+* Boas práticas de Frontend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
