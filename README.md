@@ -15,6 +15,11 @@ O projeto foi desenvolvido com o objetivo de praticar conceitos modernos de dese
 
 Os dados das tarefas são consumidos através da API pública **DummyJSON**.
 
+
+## Preview
+
+![Preview do Focar](./public/FotoFocar.png)
+
 ---
 
 ## Funcionalidades
@@ -159,3 +164,9 @@ Este projeto foi desenvolvido com foco em aprendizado e prática dos seguintes c
 * Boas práticas de Frontend
 
 ---
+## Portfólio
+
+No meu portfólio você encontrará um vídeo demonstrativo desta aplicação, além de outros projetos desenvolvidos por mim.
+
+
+Portfólio: https://adriano-atbs.vercel.app/
