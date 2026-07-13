@@ -18,7 +18,7 @@ Os dados das tarefas são consumidos através da API pública **DummyJSON**.
 
 ## Preview
 
-![Preview do Focar](./public/FotoFocar.png)
+![Preview do Focar](./public/FotoFocar2.png)
 
 ---
 
