@@ -2,15 +2,15 @@ import CardTarefa from "./CardTarefa";
 import { Todo } from "../types/todos.model";
 interface ListaDeTarefaProps {
     todos: Todo[];
-    toggleTarefa: (id: number) => void;
+    onToggleAlternarConclusaoTarefa : (id: number) => void;
     deletarTarefa: (id: number) => Promise<void>;
 }
-export default function ListaDeTarefa({ todos, toggleTarefa, deletarTarefa }: ListaDeTarefaProps) {
+export default function ListaDeTarefa({ todos, onToggleAlternarConclusaoTarefa , deletarTarefa }: ListaDeTarefaProps) {
     
     return(
         <section >
             {todos.map((tarefa) => (
-                <CardTarefa key={tarefa.id} todos={tarefa} onToggle={toggleTarefa} deletarTarefa={deletarTarefa} />
+                <CardTarefa key={tarefa.id} tarefa={tarefa} onAlternarConclusao={onToggleAlternarConclusaoTarefa} deletarTarefa={deletarTarefa} />
             ))}
         </section>
     )
