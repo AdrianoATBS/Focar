@@ -1,5 +1,5 @@
 "use client"
-import  { FraseMotivacional } from "@/features/tarefas/mocks/frasesMotivacionais.mock";
+import { FraseMotivacional } from "../types/frases.model";
 import { useMemo } from "react";
 interface TituloGenericoTarefaProps {
     frasesMotivacionais: readonly FraseMotivacional[];
@@ -11,8 +11,8 @@ export default function TituloGenericoTarefa({ frasesMotivacionais }: TituloGene
 
    const fraseMotivacional = useMemo(() =>{
         const hoje = new Date().getDate();
-        const indiceAleatorio = Math.floor( hoje % frasesMotivacionais.length);
-        return frasesMotivacionais[indiceAleatorio].texto;
+        const fraseDoDia = Math.floor( hoje % frasesMotivacionais.length);
+        return frasesMotivacionais[fraseDoDia].texto;
    }, [frasesMotivacionais])
 
     return(

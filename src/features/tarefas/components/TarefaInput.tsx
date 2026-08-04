@@ -24,9 +24,9 @@ export default function TarefaInput({ adicionarTarefa }: TarefaInputProps){
                  cursor-pointer hover:from-primaria-clara hover:to-primaria-escura 
                  transition-colors duration-300
                  active:scale-95"  
-                 onClick={() => {
+                 onClick={async () => {
                     if(tarefa.trim() === "") return;
-                     adicionarTarefa(tarefa);
+                     await adicionarTarefa(tarefa);
                      setTarefa("");
                  }}
                 >
