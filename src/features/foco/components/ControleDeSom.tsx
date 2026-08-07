@@ -11,6 +11,21 @@ interface ControleDeSomProps {
     
 }
 export default function ControleDeSom({ somAtivo, setSomAtivo, volume, ajustarVolume, mostrarVolume, setMostrarVolume }: ControleDeSomProps) {
+        const sons  = [
+            {
+                nome: "Lo-fi",
+                valor: "lofi"
+            },
+            {
+                nome: "Forest",
+                valor: "forest" 
+            },
+            {
+                nome: "Rain",
+                valor: "rain"
+            }
+        ];
+
     return(
         <div className="w-fit flex items-center justify-end 
         p-4 shadow-2xl bg-superficie rounded-full mb-10 mt-8 ">
@@ -35,19 +50,15 @@ export default function ControleDeSom({ somAtivo, setSomAtivo, volume, ajustarVo
                 />
             )}
             <div className="flex items-center justify-center gap-6 ml-2 pl-2 border-l-2 border-borda">
-               
-                <button className={`cursor-pointer p-2 rounded-xl transition-all ${somAtivo === "lofi" ? 
-                    'bg-primaria/25 text-primaria-escura' : 'text-[#5E6479]'} `}
-                    onClick={() => setSomAtivo("lofi")}>Lo-fi</button>
-
-                <button className={`cursor-pointer p-2 rounded-xl transition-all ${somAtivo === "forest" ?
-                     'bg-primaria/25 text-primaria-escura' : 'text-[#5E6479]'} `}
-                        onClick={() => setSomAtivo("forest")}>Forest</button>
-
-                <button className={`cursor-pointer p-2 rounded-xl transition-all ${somAtivo === "rain" ? 
-                    'bg-primaria/25 text-primaria-escura' : 'text-[#5E6479] '} `}
-                    onClick={() => setSomAtivo("rain")}>
-                    Rain</button>
+                {sons.map((som ) => {
+                    return(
+                        <button key={som.valor} className={`cursor-pointer p-2 
+                            rounded-xl transition-all ${somAtivo === som.valor ? 
+                            'bg-primaria/25 text-primaria-escura' : 'text-[#5E6479]'} `}
+                            onClick={() => setSomAtivo(som.valor)}>{som.nome}
+                        </button>
+                    )
+                })}
             </div>
         </div>
     )
