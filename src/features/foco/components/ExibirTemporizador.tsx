@@ -5,15 +5,17 @@ import { SlRefresh } from "react-icons/sl";
 
 
 interface ExibirTemporizadorProps {
-    tempo: number;
-    formatarTempo: (tempo: number) => string;
-    adicionarTempo: () => void;
-    resetarTempo: () => void;
-    diminuirTempo: () => void;
+    controles: {
+        tempo: number;
+        formatarTempo: (tempo: number) => string;
+        adicionarTempo: () => void;
+        resetarTempo: () => void;
+        diminuirTempo: () => void;
+    }
 }
 
-export default function ExibirTemporizador({ tempo, formatarTempo, 
-    adicionarTempo, resetarTempo, diminuirTempo }: ExibirTemporizadorProps,  ){
+
+export default function ExibirTemporizador({ controles }: ExibirTemporizadorProps,  ){
     
 
     return(
@@ -23,7 +25,7 @@ export default function ExibirTemporizador({ tempo, formatarTempo,
 
             
             <div className="flex flex-col items-center justify-center absolute">
-                <span className="text-6xl font-bold">{formatarTempo(tempo)}</span>
+                <span className="text-6xl font-bold">{controles.formatarTempo(controles.tempo)}</span>
                 <div className=" border-t-4 border-primaria-clara w-8 rounded-2xl m-1"></div>
                 <p className="texto-suave">Minutos Restantes</p>
             </div>
@@ -33,14 +35,14 @@ export default function ExibirTemporizador({ tempo, formatarTempo,
                 <div className="flex flex-col items-end justify-end">
 
                     <button 
-                    onClick={adicionarTempo}
+                    onClick={controles.adicionarTempo}
                     className="bg-superficie shadow-lg text-branca p-2 rounded-full m-2
                     cursor-pointer active:scale-95">
                         
                         <FaPlus  className="text-[#151B2D]"/>
                     </button>
 
-                    <button  onClick={resetarTempo}
+                    <button  onClick={controles.resetarTempo}
                     className="bg-superficie shadow-lg p-2 rounded-full m-2  
                     cursor-pointer active:scale-95 flex "
                     >
@@ -48,7 +50,7 @@ export default function ExibirTemporizador({ tempo, formatarTempo,
                     </button>
 
                     <button 
-                    onClick={diminuirTempo}
+                    onClick={controles.diminuirTempo}
                     className="bg-superficie shadow-lg text-branca p-2 rounded-full m-2 
                     cursor-pointer active:scale-95">
                         <FiMinus className="text-[#151B2D]" />
@@ -56,8 +58,7 @@ export default function ExibirTemporizador({ tempo, formatarTempo,
                 </div>
 
             </div>
-            
-            
+                
         </div>
     )
 }

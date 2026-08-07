@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 export function useAudio(){
-    const [somAtual, setSomAtual] = useState("");
+    const [somAtivo, setSomAtivoState] = useState("");
     const [volume, setVolume] = useState(0.5);
     const [mostrarVolume, setMostrarVolume] = useState(false);
 
@@ -11,12 +11,12 @@ export function useAudio(){
                 audioRef.current.pause();
                 audioRef.current = null;
             }
-            if(!somAtual){
+            if(!somAtivo){
                 return;
             }
-            if(somAtual !== 'none')
+            if(somAtivo !== 'none')
             {
-                audioRef.current = new Audio(`/audio/${somAtual}.mp3`);
+                audioRef.current = new Audio(`/audio/${somAtivo}.mp3`);
                 audioRef.current.loop = true;
                 audioRef.current.play();
             }
@@ -26,20 +26,20 @@ export function useAudio(){
                     audioRef.current = null;
                 };
             };
-        }, [somAtual]);
+        }, [somAtivo]);
 
         const setSomAtivo = (som: string) => {
-            if(somAtual === "lofi" && som === "lofi"){
-                setSomAtual("");
+            if(somAtivo === "lofi" && som === "lofi"){
+                setSomAtivoState("");
             }
-            else if(somAtual === "rain" && som === "rain"){
-                setSomAtual("");
+            else if(somAtivo === "rain" && som === "rain"){
+                setSomAtivoState("");
             }
-            else if(somAtual === "forest" && som === "forest"){
-                setSomAtual("");
+            else if(somAtivo === "forest" && som === "forest"){
+                setSomAtivoState("");
             }
             else{
-                setSomAtual(som);
+                setSomAtivoState(som);
             }
         };
 
@@ -53,5 +53,5 @@ export function useAudio(){
         }
         }, [volume]);
 
-    return{ somAtual, volume, mostrarVolume, setMostrarVolume, setSomAtivo, ajustarVolume };
+    return{ somAtivo, volume, mostrarVolume, setMostrarVolume, setSomAtivo, ajustarVolume };
 }

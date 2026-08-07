@@ -15,10 +15,26 @@ export default function Temporizador( ) {
         adicionarTempo, resetarTempo, diminuirTempo, 
           } = useTemporizador();
     
-    const {somAtual, setSomAtivo, 
+    const {somAtivo, setSomAtivo, 
         volume, ajustarVolume, mostrarVolume, 
         setMostrarVolume} = useAudio();
+        
+    const controles = {
+        tempo,
+        adicionarTempo,
+        diminuirTempo,
+        resetarTempo,
+        formatarTempo,        
+    }
 
+    const controlesSom ={
+        somAtivo,
+        setSomAtivo,
+        volume,
+        ajustarVolume,
+        mostrarVolume,
+        setMostrarVolume
+    }
     return(
         <section className=" w-full flex flex-col items-center justify-center gap-3
         mx-auto">
@@ -26,12 +42,7 @@ export default function Temporizador( ) {
             <FrasesMotivacionaisFocus frases={frasesMotivacionaisFocus} />
            
             <ExibirTemporizador 
-                tempo={tempo}
-                formatarTempo={formatarTempo}
-                adicionarTempo={adicionarTempo}
-                resetarTempo={resetarTempo}
-                diminuirTempo={diminuirTempo}
-               
+                controles={controles}
             />
             <TemporizadorControles 
                 rodando={rodando}
@@ -41,9 +52,7 @@ export default function Temporizador( ) {
                 <CardsDados />
                 <div className="absolute top-25 right-15">
 
-                <ControleDeSom somAtivo={somAtual} setSomAtivo={setSomAtivo} volume={volume} 
-                ajustarVolume={ajustarVolume} mostrarVolume={mostrarVolume}
-                 setMostrarVolume={setMostrarVolume} />
+                <ControleDeSom {...controlesSom} />
                 </div>
             </div>
         </section>
