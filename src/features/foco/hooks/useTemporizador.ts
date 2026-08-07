@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect,  useState } from "react";
 
 export function useTemporizador() {
-    const [tempo, setTempo] = useState(1500);
+    const TEMPO_INICIAL = 25 * 60;;
+
+    const [tempo, setTempo] = useState(TEMPO_INICIAL);
 
     const [rodando, setRodando] = useState<boolean>(false);
 
@@ -27,7 +29,7 @@ export function useTemporizador() {
             setTempo((prevTempo) => prevTempo + 300);
         };
         const resetarTempo = () => {
-            setTempo(1500);
+            setTempo(TEMPO_INICIAL);
         }
         const diminuirTempo = () => {
             setTempo((prevTempo) => Math.max(prevTempo - 300, 0));
