@@ -1,10 +1,9 @@
 import CalendarioDia from "./CalendarioDia";
 interface CalendarioProps {
-    diaAtual: number;
     dataAtual: Date;
    
 }
-export default function Calendario({ dataAtual }: CalendarioProps) {
+export default function CalendarioGrid({ dataAtual }: CalendarioProps) {
     const semana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
     return(
         <div className="w-full h-full bg-superficie rounded-lg shadow-lg p-4 ">

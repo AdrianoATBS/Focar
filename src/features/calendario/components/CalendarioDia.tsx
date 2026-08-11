@@ -3,6 +3,8 @@ interface CalendarioDiaProps {
   
 }
 export default function CalendarioDia({  dataAtual }: CalendarioDiaProps) {
+    const hoje = new Date();
+
     const diasNoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate();
     const diaPrimeiroDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), 1);
     const diaDaSemanaPrimeiroDoMes = diaPrimeiroDoMes.getDay();
@@ -12,9 +14,9 @@ export default function CalendarioDia({  dataAtual }: CalendarioDiaProps) {
         (_, i) => diasNoMesAnterior - diaDaSemanaPrimeiroDoMes + i + 1);
     const diasAtuais = Array.from({ length: diasNoMes }, (_, i) => i + 1);
    
-    const diaDestaqueMes = 
-    new Date().getMonth() === dataAtual.getMonth() && new Date().getFullYear() 
-    === dataAtual.getFullYear() ? new Date().getDate() : null;
+    const diaDestaqueMes = hoje.getMonth() === dataAtual.getMonth() 
+    && hoje.getFullYear() === dataAtual.getFullYear() ? 
+    hoje.getDate() : null;
     
    
     return(
