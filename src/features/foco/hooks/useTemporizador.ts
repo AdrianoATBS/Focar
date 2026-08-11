@@ -1,3 +1,4 @@
+"use client";
 import { useEffect,  useState } from "react";
 
 export function useTemporizador() {
@@ -6,7 +7,6 @@ export function useTemporizador() {
     const [tempo, setTempo] = useState(TEMPO_INICIAL);
 
     const [rodando, setRodando] = useState<boolean>(false);
-
     
         useEffect(() => {
             if(rodando){

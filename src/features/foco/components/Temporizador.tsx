@@ -35,6 +35,9 @@ export default function Temporizador( ) {
         mostrarVolume,
         setMostrarVolume
     }
+    const alternarTemporizador = () => {
+        setRodando((prevRodando) => !prevRodando);
+    }
     return(
         <section className=" w-full flex flex-col items-center justify-center gap-3
         mx-auto">
@@ -46,7 +49,7 @@ export default function Temporizador( ) {
             />
             <TemporizadorControles 
                 rodando={rodando}
-                setRodando={setRodando}
+                alternarTemporizador={alternarTemporizador}
             />
             <div className="w-full flex items-center justify-center gap-10 relative">
                 <CardsDados />

@@ -6,9 +6,9 @@ import { Dispatch } from "react";
 
 interface TemporizadorControlesProps {
     rodando: boolean;
-    setRodando: Dispatch<SetStateAction<boolean>>;
+    alternarTemporizador: () => void;
 }
-export default function TemporizadorControles({ rodando, setRodando }: TemporizadorControlesProps) {
+export default function TemporizadorControles({ rodando, alternarTemporizador }: TemporizadorControlesProps) {
       
 
     return(
@@ -21,7 +21,7 @@ export default function TemporizadorControles({ rodando, setRodando }: Temporiza
                     hover:from-primaria-clara
                     hover:to-primaria-escura transition-colors duration-300 active:scale-95"
                     onClick={() => {
-                        setRodando((prevRodando) => !prevRodando);
+                        alternarTemporizador();
                     }}>
                         {rodando ? <FaPause /> : <FaPlay />}
                     </button>
