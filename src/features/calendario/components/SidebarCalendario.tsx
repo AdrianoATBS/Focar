@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 export default function SidebarCalendario(){
     const rotaAtual = usePathname();
 
-    const EhRotaAtualAtiva = (rota: string) => {
+    const ehRotaAtualAtiva = (rota: string) => {
         return rotaAtual === rota;
     }
     return(
@@ -26,19 +26,19 @@ export default function SidebarCalendario(){
                 <div className="flex flex-col gap-4 pt-4 border-t border-borda/25">
                     <div className={`flex items-center gap-2
                      hover:text-primaria-escura cursor-pointer p-2 rounded-lg
-                     ${EhRotaAtualAtiva('/') ? 'text-[#047857] bg-[#ECFDF5] font-bold' : ''}`}>
+                     ${ehRotaAtualAtiva('/') ? 'text-[#047857] bg-[#ECFDF5] font-bold' : ''}`}>
                         <MdWindow className=""/>                       
                         <Link href="/" className="text-sm font-bold ">Tarefas</Link>
                     </div>
                     <div className={`flex items-center gap-2
                      hover:text-primaria-escura cursor-pointer p-2 rounded-lg
-                     ${EhRotaAtualAtiva('/foco') ? 'text-[#047857] bg-[#ECFDF5] font-bold' : ''}`}>
+                     ${ehRotaAtualAtiva('/foco') ? 'text-[#047857] bg-[#ECFDF5] font-bold' : ''}`}>
                         <MdOutlineTimer />
                         <Link href="/foco" className="text-sm font-bold">Focus</Link>
                     </div>
                     <div className={`flex items-center gap-2
                      hover:text-primaria-escura cursor-pointer p-2 rounded-lg
-                     ${EhRotaAtualAtiva('/calendario') ? 'text-[#047857] bg-[#ECFDF5] font-bold' : ''}`}>
+                     ${ehRotaAtualAtiva('/calendario') ? 'text-[#047857] bg-[#ECFDF5] font-bold' : ''}`}>
                         <CiCalendar/>
                         <Link href="/calendario" className="text-sm font-bold ">Calendario</Link>
                     </div>
