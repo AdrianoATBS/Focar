@@ -10,7 +10,7 @@ export default function FrasesMotivacionaisFocus({ frases }: FrasesMotivacionais
 
     return(
         <div className="w-full max-w-3xl flex items-center justify-center p-2 ">
-            <h1 className="titulo-1 text-center">{fraseMotivacional}</h1>
+            <p className="titulo-1 text-center">{fraseMotivacional}</p>
         </div>
     )
 }
